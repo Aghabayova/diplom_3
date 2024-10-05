@@ -21,3 +21,4 @@ class EndPoints:
     delete_user = test_url + '/api/auth/user'
     get_all_orders = test_url + '/api/orders/all'
     get_orders = test_url + '/api/orders'
+

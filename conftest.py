@@ -19,6 +19,7 @@ from pages.retrieve_password_page import PasswordPage
 
 
 
+
 @pytest.fixture(scope='function', params=["chrome", "firefox"])
 def get_driver(request):
     driver = None

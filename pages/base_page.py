@@ -14,8 +14,8 @@ class BasePage:
         self.driver = driver
 
     @allure.step("Wait and find element by locator")
-    def wait_and_find_element(self, locator):
-        WebDriverWait(self.driver, 15).until((EC.visibility_of_element_located(locator)))
+    def wait_and_find_element(self, locator, timeout=15):
+        WebDriverWait(self.driver, timeout).until((EC.visibility_of_element_located(locator)))
 
         return self.driver.find_element(*locator)
 
@@ -28,9 +28,9 @@ class BasePage:
         return self.wait_and_find_element(locator).text
 
     @allure.step("Wait until element is clickable and click on it")
-    def click_to_element(self, locator):
+    def click_to_element(self, locator, timeout=15):
 
-        WebDriverWait(self.driver, 15).until((EC.element_to_be_clickable(locator)))
+        WebDriverWait(self.driver, timeout).until((EC.element_to_be_clickable(locator)))
         element = self.driver.find_element(*locator)
 
         attempt_count = 1000000
@@ -82,9 +82,9 @@ class BasePage:
         base_page.execute_script("arguments[0].click();", element)
 
     @allure.step("Wait until page is loaded")
-    def wait_window_to_load(self, link):
-        WebDriverWait(self.driver, 15).until(EC.url_to_be(link))
+    def wait_window_to_load(self, link, timeout=15):
+        WebDriverWait(self.driver, timeout).until(EC.url_to_be(link))
 
     @allure.step("Wait until locator is clickable")
-    def wait_element_clickable(self, locator):
-        WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(locator))
+    def wait_element_clickable(self, locator, timeout=15):
+        WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
