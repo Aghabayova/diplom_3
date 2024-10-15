@@ -1,8 +1,10 @@
 import allure
 import pytest
 
+from pages.login_page import LoginPage
 from data import Urls
 import api_requests
+from pages.main_page import MainPage
 
 
 class TestMainPage:
@@ -28,5 +30,9 @@ class TestMainPage:
         assert get_main_page.check_counter_of_ingredient()
 
     @allure.title("Verify authorised user creates order")
-    def test_user_create_order(self, get_main_page, get_logged_driver):
-        assert get_main_page.create_order()
+    def test_user_create_order(self, get_driver):
+        login_page = LoginPage(get_driver)
+        login_page.login()
+        main_page = MainPage(get_driver)
+
+        assert main_page.create_order()

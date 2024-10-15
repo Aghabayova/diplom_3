@@ -9,7 +9,6 @@ from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
-
 from api_requests import User
 from helpers import NewUserCredentials
 from pages.profile_page import ProfilePage
@@ -17,8 +16,6 @@ from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.order_page import OrderFeed
 from pages.retrieve_password_page import PasswordPage
-
-
 
 
 @pytest.fixture(scope='function', params=["chrome", "firefox"])
@@ -76,7 +73,6 @@ def get_main_page(get_driver):
 
 @pytest.fixture(scope='function')
 def get_order_feed_instance(get_driver):
-    time.sleep(5)
     return OrderFeed(get_driver)
 
 

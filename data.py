@@ -22,3 +22,7 @@ class EndPoints:
     get_all_orders = test_url + '/api/orders/all'
     get_orders = test_url + '/api/orders'
 
+
+class UserCredentials:
+    EMAIL = 'sam@gmail.com'
+    PASSWORD = '1234567890'
