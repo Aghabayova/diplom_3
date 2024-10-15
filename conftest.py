@@ -10,7 +10,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
 
-from helpers import NewUserCredentials, User
+from api_requests import User
+from helpers import NewUserCredentials
 from pages.profile_page import ProfilePage
 from pages.login_page import LoginPage
 from pages.main_page import MainPage

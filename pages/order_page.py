@@ -3,7 +3,7 @@ import allure
 from locators.order_page_locators import OrderLocators
 from pages.base_page import BasePage
 from data import Urls
-from helpers import Order
+from api_requests import Order
 import time
 
 

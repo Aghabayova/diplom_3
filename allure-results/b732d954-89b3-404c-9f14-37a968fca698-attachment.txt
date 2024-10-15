@@ -1,6 +1,0 @@
-Opening Order Feed Page...
-Using token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDA5ODY2OWVkMjgwMDAxYjRkNGFjOSIsImlhdCI6MTcyODA5MjI2MiwiZXhwIjoxNzI4MDkzNDYyfQ.RdkZroRt1Y8Homr_x_WWsIJrseo19EipR0yCuSccGKE
-Created ingredients: ['61c0c5a71d1f82001bdaaa6c', '61c0c5a71d1f82001bdaaa73', '61c0c5a71d1f82001bdaaa78']
-Order created with number: 129718
-Waiting for order to appear in progress...
-Order number from locator: 0129717

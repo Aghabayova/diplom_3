@@ -2,7 +2,7 @@ import allure
 import pytest
 
 from data import Urls
-import helpers
+import api_requests
 
 
 class TestMainPage:
@@ -15,7 +15,7 @@ class TestMainPage:
         assert get_main_page.click_on_order_feed() == Urls.ORDER_FEED
 
     @allure.title("Verify Click on ingredient opens popup")
-    @pytest.mark.parametrize("ingredient", helpers.Order.get_ingredients()[1])
+    @pytest.mark.parametrize("ingredient", api_requests.Order.get_ingredients()[1])
     def test_click_on_ingredient(self, get_main_page, ingredient):
         assert get_main_page.click_on_ingredient(ingredient) == "Детали ингредиента"
 

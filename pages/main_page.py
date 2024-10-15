@@ -3,7 +3,7 @@ import allure
 from locators.main_page_locators import MainPageLocators
 from pages.base_page import BasePage
 from data import Urls
-import helpers
+import api_requests
 
 
 class MainPage(BasePage):
@@ -42,14 +42,14 @@ class MainPage(BasePage):
     @allure.step("Add the ingredient 'Флюоресцентная булка R2-D3' to the order")
     def add_bun_to_order(self):
         self.open_page(Urls.MAIN)
-        ingredient_id = helpers.Order.get_ingredients()[1][0]
+        ingredient_id = api_requests.Order.get_ingredients()[1][0]
         ingredient_locator = self.format_locator(MainPageLocators.INGREDIENT, ingredient_id)
         self.drag_element_and_drop(ingredient_locator, MainPageLocators.ORDER_CART)
 
     @allure.step("Verify that the ingredient counter increases when added to the order")
     def check_counter_of_ingredient(self):
         self.open_page(Urls.MAIN)
-        ingredient_id = helpers.Order.get_ingredients()[1][0]
+        ingredient_id = api_requests.Order.get_ingredients()[1][0]
 
         ingredient_locator = self.format_locator(MainPageLocators.INGREDIENT, ingredient_id)
         ingredient_count_locator = self.format_locator(MainPageLocators.INGREDIENT_COUNTER, ingredient_id)
